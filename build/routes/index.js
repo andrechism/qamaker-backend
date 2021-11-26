@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+var express_1 = require("express");
+var qa_routes_1 = require("./qa.routes");
+var qaItem_routes_1 = require("./qaItem.routes");
+var qaItemImage_routes_1 = require("./qaItemImage.routes");
+var router = express_1.Router();
+exports.router = router;
+router.use("/qa", qa_routes_1.QARoutes);
+router.use("/item", qaItem_routes_1.QAItemRoutes);
+router.use("/image", qaItemImage_routes_1.QAItemImagesRoutes);

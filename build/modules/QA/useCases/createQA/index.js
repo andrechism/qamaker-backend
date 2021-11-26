@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createQAController = void 0;
+var QARepository_1 = require("../../repositories/implementations/QARepository");
+var CreateQAController_1 = require("./CreateQAController");
+var CreateQAUseCase_1 = require("./CreateQAUseCase");
+var categoriesRepository = QARepository_1.QARepository.getInstance();
+var createQAUseCase = new CreateQAUseCase_1.CreateQAUseCase(categoriesRepository);
+var createQAController = new CreateQAController_1.CreateQAController(createQAUseCase);
+exports.createQAController = createQAController;

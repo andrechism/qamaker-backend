@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.updateQAItemController = void 0;
+var QAItemRepository_1 = require("../../repositories/implementations/QAItemRepository");
+var UpdateQAItemController_1 = require("./UpdateQAItemController");
+var UpdateQAItemUseCase_1 = require("./UpdateQAItemUseCase");
+var qaItemRepository = QAItemRepository_1.QAItemRepository.getInstance();
+var updateQAItemUseCase = new UpdateQAItemUseCase_1.UpdateQAItemUseCase(qaItemRepository);
+var updateQAItemController = new UpdateQAItemController_1.UpdateQAItemController(updateQAItemUseCase);
+exports.updateQAItemController = updateQAItemController;

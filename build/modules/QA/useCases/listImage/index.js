@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.listQAItemImageController = void 0;
+var QAItemImageRepository_1 = require("../../repositories/implementations/QAItemImageRepository");
+var ListQAItemImageController_1 = require("./ListQAItemImageController");
+var ListQAItemImageUseCase_1 = require("./ListQAItemImageUseCase");
+var qaItemImageRepository = QAItemImageRepository_1.QAItemImageRepository.getInstance();
+var listQAItemImageUseCase = new ListQAItemImageUseCase_1.ListQAItemImageUseCase(qaItemImageRepository);
+var listQAItemImageController = new ListQAItemImageController_1.ListQAItemImageController(listQAItemImageUseCase);
+exports.listQAItemImageController = listQAItemImageController;

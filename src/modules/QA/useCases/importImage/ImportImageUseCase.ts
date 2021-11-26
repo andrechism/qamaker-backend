@@ -8,10 +8,8 @@ import { IQAItemImageRepository } from "../../repositories/IQAItemImageRepositor
 class ImportImageUseCase {
     constructor(private QAItemImageRepository: IQAItemImageRepository) {}
 
-    async execute(
-        qaItemId: string,
-        files: Express.Multer.File[]
-    ): Promise<void> {
+    // @ts-ignore
+    async execute(qaItemId: string, files: any): Promise<void> {
         files.map(async (file) => {
             const { filename } = file;
             this.QAItemImageRepository.create({

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.listQAItemController = void 0;
+var QAItemRepository_1 = require("../../repositories/implementations/QAItemRepository");
+var ListQAItemController_1 = require("./ListQAItemController");
+var ListQAItemUseCase_1 = require("./ListQAItemUseCase");
+var qaItemRepository = QAItemRepository_1.QAItemRepository.getInstance();
+var listQAItemUseCase = new ListQAItemUseCase_1.ListQAItemUseCase(qaItemRepository);
+var listQAItemController = new ListQAItemController_1.ListQAItemController(listQAItemUseCase);
+exports.listQAItemController = listQAItemController;
